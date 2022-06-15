@@ -27,13 +27,13 @@
 
 namespace Klaviyo\API;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\MultipartStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp74\Client;
+use GuzzleHttp74\ClientInterface;
+use GuzzleHttp74\Exception\RequestException;
+use GuzzleHttp74\Exception\ConnectException;
+use GuzzleHttp74\Psr7\MultipartStream;
+use GuzzleHttp74\Psr7\Request;
+use GuzzleHttp74\RequestOptions;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 use Klaviyo\HeaderSelector;
@@ -244,7 +244,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function cancelCampaignAsync($campaign_id)
     {
@@ -264,7 +264,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function cancelCampaignAsyncWithHttpInfo($campaign_id)
     {
@@ -310,7 +310,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function cancelCampaignRequest($campaign_id)
     {
@@ -368,11 +368,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -393,7 +393,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -537,7 +537,7 @@ class CampaignsApi
      * @param  string $list_id The list you will send the campaign to. (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function cloneCampaignAsync($campaign_id, $name, $list_id)
     {
@@ -559,7 +559,7 @@ class CampaignsApi
      * @param  string $list_id The list you will send the campaign to. (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function cloneCampaignAsyncWithHttpInfo($campaign_id, $name, $list_id)
     {
@@ -607,7 +607,7 @@ class CampaignsApi
      * @param  string $list_id The list you will send the campaign to. (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function cloneCampaignRequest($campaign_id, $name, $list_id)
     {
@@ -685,11 +685,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -710,7 +710,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -869,7 +869,7 @@ class CampaignsApi
      * @param  bool $add_google_analytics If specified, adds Google Analytics tracking tags to links. Valid values are &#x60;true&#x60; and &#x60;false&#x60;. If not specified, defaults to &#x60;false&#x60;. (optional, default to false)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function createCampaignAsync($list_id, $template_id, $from_email, $from_name, $subject, $name = 'Campaign Name', $use_smart_sending = true, $add_google_analytics = false)
     {
@@ -896,7 +896,7 @@ class CampaignsApi
      * @param  bool $add_google_analytics If specified, adds Google Analytics tracking tags to links. Valid values are &#x60;true&#x60; and &#x60;false&#x60;. If not specified, defaults to &#x60;false&#x60;. (optional, default to false)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function createCampaignAsyncWithHttpInfo($list_id, $template_id, $from_email, $from_name, $subject, $name = 'Campaign Name', $use_smart_sending = true, $add_google_analytics = false)
     {
@@ -949,7 +949,7 @@ class CampaignsApi
      * @param  bool $add_google_analytics If specified, adds Google Analytics tracking tags to links. Valid values are &#x60;true&#x60; and &#x60;false&#x60;. If not specified, defaults to &#x60;false&#x60;. (optional, default to false)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function createCampaignRequest($list_id, $template_id, $from_email, $from_name, $subject, $name = 'Campaign Name', $use_smart_sending = true, $add_google_analytics = false)
     {
@@ -1055,11 +1055,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1080,7 +1080,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1218,7 +1218,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getCampaignInfoAsync($campaign_id)
     {
@@ -1238,7 +1238,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getCampaignInfoAsyncWithHttpInfo($campaign_id)
     {
@@ -1284,7 +1284,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getCampaignInfoRequest($campaign_id)
     {
@@ -1342,11 +1342,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1367,7 +1367,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1514,7 +1514,7 @@ class CampaignsApi
      * @param  string $offset For pagination, if a response to this endpoint includes a &#x60;next_offset&#x60;, use that value to get the next page of recipients. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getCampaignRecipientsAsync($campaign_id, $count = 5000, $sort = 'asc', $offset = null)
     {
@@ -1537,7 +1537,7 @@ class CampaignsApi
      * @param  string $offset For pagination, if a response to this endpoint includes a &#x60;next_offset&#x60;, use that value to get the next page of recipients. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getCampaignRecipientsAsyncWithHttpInfo($campaign_id, $count = 5000, $sort = 'asc', $offset = null)
     {
@@ -1586,7 +1586,7 @@ class CampaignsApi
      * @param  string $offset For pagination, if a response to this endpoint includes a &#x60;next_offset&#x60;, use that value to get the next page of recipients. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getCampaignRecipientsRequest($campaign_id, $count = 5000, $sort = 'asc', $offset = null)
     {
@@ -1681,11 +1681,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1706,7 +1706,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1847,7 +1847,7 @@ class CampaignsApi
      * @param  int $count For pagination, the number of results to return. Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getCampaignsAsync($page = 0, $count = 50)
     {
@@ -1868,7 +1868,7 @@ class CampaignsApi
      * @param  int $count For pagination, the number of results to return. Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getCampaignsAsyncWithHttpInfo($page = 0, $count = 50)
     {
@@ -1915,7 +1915,7 @@ class CampaignsApi
      * @param  int $count For pagination, the number of results to return. Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getCampaignsRequest($page = 0, $count = 50)
     {
@@ -1992,11 +1992,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2017,7 +2017,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2158,7 +2158,7 @@ class CampaignsApi
      * @param  string $send_time A timestamp of the format &#x60;%Y-%m-%d %H:%M:%S&#x60; in the UTC timezone.  Ex:  &#x60;2022-01-13 00:00:00&#x60; (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function scheduleCampaignAsync($campaign_id, $send_time)
     {
@@ -2179,7 +2179,7 @@ class CampaignsApi
      * @param  string $send_time A timestamp of the format &#x60;%Y-%m-%d %H:%M:%S&#x60; in the UTC timezone.  Ex:  &#x60;2022-01-13 00:00:00&#x60; (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function scheduleCampaignAsyncWithHttpInfo($campaign_id, $send_time)
     {
@@ -2226,7 +2226,7 @@ class CampaignsApi
      * @param  string $send_time A timestamp of the format &#x60;%Y-%m-%d %H:%M:%S&#x60; in the UTC timezone.  Ex:  &#x60;2022-01-13 00:00:00&#x60; (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function scheduleCampaignRequest($campaign_id, $send_time)
     {
@@ -2294,11 +2294,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2319,7 +2319,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2457,7 +2457,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function sendCampaignAsync($campaign_id)
     {
@@ -2477,7 +2477,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function sendCampaignAsyncWithHttpInfo($campaign_id)
     {
@@ -2523,7 +2523,7 @@ class CampaignsApi
      * @param  string $campaign_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function sendCampaignRequest($campaign_id)
     {
@@ -2581,11 +2581,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2606,7 +2606,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2768,7 +2768,7 @@ class CampaignsApi
      * @param  bool $add_google_analytics If specified, adds Google Analytics tracking tags to links. Campaigns initially default to &#x60;false&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateCampaignAsync($campaign_id, $list_id = null, $template_id = null, $from_email = null, $from_name = null, $subject = null, $name = null, $use_smart_sending = null, $add_google_analytics = null)
     {
@@ -2796,7 +2796,7 @@ class CampaignsApi
      * @param  bool $add_google_analytics If specified, adds Google Analytics tracking tags to links. Campaigns initially default to &#x60;false&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateCampaignAsyncWithHttpInfo($campaign_id, $list_id = null, $template_id = null, $from_email = null, $from_name = null, $subject = null, $name = null, $use_smart_sending = null, $add_google_analytics = null)
     {
@@ -2850,7 +2850,7 @@ class CampaignsApi
      * @param  bool $add_google_analytics If specified, adds Google Analytics tracking tags to links. Campaigns initially default to &#x60;false&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function updateCampaignRequest($campaign_id, $list_id = null, $template_id = null, $from_email = null, $from_name = null, $subject = null, $name = null, $use_smart_sending = null, $add_google_analytics = null)
     {
@@ -2940,11 +2940,11 @@ class CampaignsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2965,7 +2965,7 @@ class CampaignsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

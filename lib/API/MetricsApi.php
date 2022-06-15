@@ -27,13 +27,13 @@
 
 namespace Klaviyo\API;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\MultipartStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp74\Client;
+use GuzzleHttp74\ClientInterface;
+use GuzzleHttp74\Exception\RequestException;
+use GuzzleHttp74\Exception\ConnectException;
+use GuzzleHttp74\Psr7\MultipartStream;
+use GuzzleHttp74\Psr7\Request;
+use GuzzleHttp74\RequestOptions;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 use Klaviyo\HeaderSelector;
@@ -247,7 +247,7 @@ class MetricsApi
      * @param  int $count For pagination, the number of results to return. Default &#x3D; 50 ; Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getMetricsAsync($page = 0, $count = 50)
     {
@@ -268,7 +268,7 @@ class MetricsApi
      * @param  int $count For pagination, the number of results to return. Default &#x3D; 50 ; Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getMetricsAsyncWithHttpInfo($page = 0, $count = 50)
     {
@@ -315,7 +315,7 @@ class MetricsApi
      * @param  int $count For pagination, the number of results to return. Default &#x3D; 50 ; Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getMetricsRequest($page = 0, $count = 50)
     {
@@ -392,11 +392,11 @@ class MetricsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -417,7 +417,7 @@ class MetricsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -576,7 +576,7 @@ class MetricsApi
      * @param  int $count Maximum number of segments to return. Default &#x3D; 25, **MAX &#x3D; 1000** (optional, default to 25)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function metricExportAsync($metric_id, $start_date = null, $end_date = null, $unit = 'day', $measurement = 'count', $where = null, $by = null, $count = 25)
     {
@@ -603,7 +603,7 @@ class MetricsApi
      * @param  int $count Maximum number of segments to return. Default &#x3D; 25, **MAX &#x3D; 1000** (optional, default to 25)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function metricExportAsyncWithHttpInfo($metric_id, $start_date = null, $end_date = null, $unit = 'day', $measurement = 'count', $where = null, $by = null, $count = 25)
     {
@@ -656,7 +656,7 @@ class MetricsApi
      * @param  int $count Maximum number of segments to return. Default &#x3D; 25, **MAX &#x3D; 1000** (optional, default to 25)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function metricExportRequest($metric_id, $start_date = null, $end_date = null, $unit = 'day', $measurement = 'count', $where = null, $by = null, $count = 25)
     {
@@ -798,11 +798,11 @@ class MetricsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -823,7 +823,7 @@ class MetricsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -970,7 +970,7 @@ class MetricsApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function metricTimelineAsync($metric_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -993,7 +993,7 @@ class MetricsApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function metricTimelineAsyncWithHttpInfo($metric_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -1042,7 +1042,7 @@ class MetricsApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function metricTimelineRequest($metric_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -1140,11 +1140,11 @@ class MetricsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1165,7 +1165,7 @@ class MetricsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1309,7 +1309,7 @@ class MetricsApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function metricsTimelineAsync($since = null, $count = 50, $sort = 'desc')
     {
@@ -1331,7 +1331,7 @@ class MetricsApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function metricsTimelineAsyncWithHttpInfo($since = null, $count = 50, $sort = 'desc')
     {
@@ -1379,7 +1379,7 @@ class MetricsApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function metricsTimelineRequest($since = null, $count = 50, $sort = 'desc')
     {
@@ -1463,11 +1463,11 @@ class MetricsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1488,7 +1488,7 @@ class MetricsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

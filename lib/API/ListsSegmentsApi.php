@@ -27,13 +27,13 @@
 
 namespace Klaviyo\API;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\MultipartStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp74\Client;
+use GuzzleHttp74\ClientInterface;
+use GuzzleHttp74\Exception\RequestException;
+use GuzzleHttp74\Exception\ConnectException;
+use GuzzleHttp74\Psr7\MultipartStream;
+use GuzzleHttp74\Psr7\Request;
+use GuzzleHttp74\RequestOptions;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 use Klaviyo\HeaderSelector;
@@ -247,7 +247,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject4 $inline_object4 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function addMembersAsync($list_id, $inline_object4 = null)
     {
@@ -268,7 +268,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject4 $inline_object4 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function addMembersAsyncWithHttpInfo($list_id, $inline_object4 = null)
     {
@@ -315,7 +315,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject4 $inline_object4 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function addMembersRequest($list_id, $inline_object4 = null)
     {
@@ -359,7 +359,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($inline_object4)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object4));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object4));
             } else {
                 $httpBody = $inline_object4;
             }
@@ -379,11 +379,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -404,7 +404,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -542,7 +542,7 @@ class ListsSegmentsApi
      * @param  string $list_name (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function createListAsync($list_name)
     {
@@ -562,7 +562,7 @@ class ListsSegmentsApi
      * @param  string $list_name (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function createListAsyncWithHttpInfo($list_name)
     {
@@ -608,7 +608,7 @@ class ListsSegmentsApi
      * @param  string $list_name (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function createListRequest($list_name)
     {
@@ -662,11 +662,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -687,7 +687,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -779,7 +779,7 @@ class ListsSegmentsApi
      * @param  string $list_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function deleteListAsync($list_id)
     {
@@ -799,7 +799,7 @@ class ListsSegmentsApi
      * @param  string $list_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function deleteListAsyncWithHttpInfo($list_id)
     {
@@ -835,7 +835,7 @@ class ListsSegmentsApi
      * @param  string $list_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function deleteListRequest($list_id)
     {
@@ -893,11 +893,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -918,7 +918,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1056,7 +1056,7 @@ class ListsSegmentsApi
      * @param  string $email (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function excludeGloballyAsync($email)
     {
@@ -1076,7 +1076,7 @@ class ListsSegmentsApi
      * @param  string $email (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function excludeGloballyAsyncWithHttpInfo($email)
     {
@@ -1122,7 +1122,7 @@ class ListsSegmentsApi
      * @param  string $email (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function excludeGloballyRequest($email)
     {
@@ -1176,11 +1176,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1201,7 +1201,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1348,7 +1348,7 @@ class ListsSegmentsApi
      * @param  int $page For pagination, which page of results to return. Default &#x3D; 0 (optional, default to 0)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getGlobalExclusionsAsync($reason = null, $sort = 'asc', $count = 500, $page = 0)
     {
@@ -1371,7 +1371,7 @@ class ListsSegmentsApi
      * @param  int $page For pagination, which page of results to return. Default &#x3D; 0 (optional, default to 0)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getGlobalExclusionsAsyncWithHttpInfo($reason = null, $sort = 'asc', $count = 500, $page = 0)
     {
@@ -1420,7 +1420,7 @@ class ListsSegmentsApi
      * @param  int $page For pagination, which page of results to return. Default &#x3D; 0 (optional, default to 0)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getGlobalExclusionsRequest($reason = null, $sort = 'asc', $count = 500, $page = 0)
     {
@@ -1508,11 +1508,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1533,7 +1533,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1674,7 +1674,7 @@ class ListsSegmentsApi
      * @param  int $marker A marker value returned by a previous GET call. Use this to grab the next batch of records. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListExclusionsAsync($list_id, $marker = null)
     {
@@ -1695,7 +1695,7 @@ class ListsSegmentsApi
      * @param  int $marker A marker value returned by a previous GET call. Use this to grab the next batch of records. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListExclusionsAsyncWithHttpInfo($list_id, $marker = null)
     {
@@ -1742,7 +1742,7 @@ class ListsSegmentsApi
      * @param  int $marker A marker value returned by a previous GET call. Use this to grab the next batch of records. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getListExclusionsRequest($list_id, $marker = null)
     {
@@ -1811,11 +1811,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1836,7 +1836,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1974,7 +1974,7 @@ class ListsSegmentsApi
      * @param  string $list_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListInfoAsync($list_id)
     {
@@ -1994,7 +1994,7 @@ class ListsSegmentsApi
      * @param  string $list_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListInfoAsyncWithHttpInfo($list_id)
     {
@@ -2040,7 +2040,7 @@ class ListsSegmentsApi
      * @param  string $list_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getListInfoRequest($list_id)
     {
@@ -2098,11 +2098,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2123,7 +2123,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2264,7 +2264,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListMembersAsync($list_id, $check_membership_request = null)
     {
@@ -2285,7 +2285,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListMembersAsyncWithHttpInfo($list_id, $check_membership_request = null)
     {
@@ -2332,7 +2332,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getListMembersRequest($list_id, $check_membership_request = null)
     {
@@ -2376,7 +2376,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($check_membership_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($check_membership_request));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($check_membership_request));
             } else {
                 $httpBody = $check_membership_request;
             }
@@ -2396,11 +2396,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2421,7 +2421,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2562,7 +2562,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListSubscriptionsAsync($list_id, $check_membership_request = null)
     {
@@ -2583,7 +2583,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListSubscriptionsAsyncWithHttpInfo($list_id, $check_membership_request = null)
     {
@@ -2630,7 +2630,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getListSubscriptionsRequest($list_id, $check_membership_request = null)
     {
@@ -2674,7 +2674,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($check_membership_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($check_membership_request));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($check_membership_request));
             } else {
                 $httpBody = $check_membership_request;
             }
@@ -2694,11 +2694,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2719,7 +2719,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2854,7 +2854,7 @@ class ListsSegmentsApi
      *
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListsAsync()
     {
@@ -2873,7 +2873,7 @@ class ListsSegmentsApi
      *
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getListsAsyncWithHttpInfo()
     {
@@ -2918,7 +2918,7 @@ class ListsSegmentsApi
      *
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getListsRequest()
     {
@@ -2962,11 +2962,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2987,7 +2987,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3128,7 +3128,7 @@ class ListsSegmentsApi
      * @param  int $marker A marker value returned by a previous GET call. Use this to grab the next batch of records. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getMembersAsync($list_or_segment_id, $marker = null)
     {
@@ -3149,7 +3149,7 @@ class ListsSegmentsApi
      * @param  int $marker A marker value returned by a previous GET call. Use this to grab the next batch of records. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getMembersAsyncWithHttpInfo($list_or_segment_id, $marker = null)
     {
@@ -3196,7 +3196,7 @@ class ListsSegmentsApi
      * @param  int $marker A marker value returned by a previous GET call. Use this to grab the next batch of records. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getMembersRequest($list_or_segment_id, $marker = null)
     {
@@ -3265,11 +3265,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -3290,7 +3290,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3431,7 +3431,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getSegmentMembersAsync($segment_id, $check_membership_request = null)
     {
@@ -3452,7 +3452,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getSegmentMembersAsyncWithHttpInfo($segment_id, $check_membership_request = null)
     {
@@ -3499,7 +3499,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\CheckMembershipRequest $check_membership_request (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getSegmentMembersRequest($segment_id, $check_membership_request = null)
     {
@@ -3543,7 +3543,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($check_membership_request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($check_membership_request));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($check_membership_request));
             } else {
                 $httpBody = $check_membership_request;
             }
@@ -3563,11 +3563,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -3588,7 +3588,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3683,7 +3683,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject5 $inline_object5 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function removeMembersAsync($list_id, $inline_object5 = null)
     {
@@ -3704,7 +3704,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject5 $inline_object5 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function removeMembersAsyncWithHttpInfo($list_id, $inline_object5 = null)
     {
@@ -3741,7 +3741,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject5 $inline_object5 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function removeMembersRequest($list_id, $inline_object5 = null)
     {
@@ -3785,7 +3785,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($inline_object5)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object5));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object5));
             } else {
                 $httpBody = $inline_object5;
             }
@@ -3805,11 +3805,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -3830,7 +3830,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3971,7 +3971,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject3 $inline_object3 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function subscribeAsync($list_id, $inline_object3 = null)
     {
@@ -3992,7 +3992,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject3 $inline_object3 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function subscribeAsyncWithHttpInfo($list_id, $inline_object3 = null)
     {
@@ -4039,7 +4039,7 @@ class ListsSegmentsApi
      * @param  \Klaviyo\Model\InlineObject3 $inline_object3 (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function subscribeRequest($list_id, $inline_object3 = null)
     {
@@ -4083,7 +4083,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($inline_object3)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object3));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object3));
             } else {
                 $httpBody = $inline_object3;
             }
@@ -4103,11 +4103,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -4128,7 +4128,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4223,7 +4223,7 @@ class ListsSegmentsApi
      * @param  array<string,object> $request_body Unsubscribe and remove profiles from a list. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function unsubscribeAsync($list_id, $request_body = null)
     {
@@ -4244,7 +4244,7 @@ class ListsSegmentsApi
      * @param  array<string,object> $request_body Unsubscribe and remove profiles from a list. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function unsubscribeAsyncWithHttpInfo($list_id, $request_body = null)
     {
@@ -4281,7 +4281,7 @@ class ListsSegmentsApi
      * @param  array<string,object> $request_body Unsubscribe and remove profiles from a list. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function unsubscribeRequest($list_id, $request_body = null)
     {
@@ -4325,7 +4325,7 @@ class ListsSegmentsApi
         // for model (json/xml)
         if (isset($request_body)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($request_body));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($request_body));
             } else {
                 $httpBody = $request_body;
             }
@@ -4345,11 +4345,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -4370,7 +4370,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4465,7 +4465,7 @@ class ListsSegmentsApi
      * @param  string $list_name (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateListNameAsync($list_id, $list_name)
     {
@@ -4486,7 +4486,7 @@ class ListsSegmentsApi
      * @param  string $list_name (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateListNameAsyncWithHttpInfo($list_id, $list_name)
     {
@@ -4523,7 +4523,7 @@ class ListsSegmentsApi
      * @param  string $list_name (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function updateListNameRequest($list_id, $list_name)
     {
@@ -4591,11 +4591,11 @@ class ListsSegmentsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -4616,7 +4616,7 @@ class ListsSegmentsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

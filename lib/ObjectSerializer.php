@@ -29,7 +29,7 @@
 namespace Klaviyo;
 
 use Klaviyo\Model\ModelInterface;
-use GuzzleHttp\Psr7\Utils;
+use GuzzleHttp74\Psr7\Utils;
 
 /**
  * ObjectSerializer Class Doc Comment

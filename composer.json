@@ -32,7 +32,16 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "Klaviyo\\" : "lib/" }
+        "files": [
+            "vendor-static/guzzlehttp/guzzle/src/functions_include.php",
+            "vendor-static/guzzlehttp/promises/src/functions_include.php"
+        ],
+        "psr-4": {
+            "Klaviyo\\" : "lib/",
+            "GuzzleHttp74\\": "vendor-static/guzzlehttp/guzzle/src/",
+            "GuzzleHttp74\\Psr7\\": "vendor-static/guzzlehttp/psr7/src/",
+            "GuzzleHttp74\\Promise\\": "vendor-static/guzzlehttp/promises/src/"
+        }
     },
     "autoload-dev": {
         "psr-4": { "Klaviyo\\Test\\" : "test/" }

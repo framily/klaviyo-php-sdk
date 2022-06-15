@@ -27,13 +27,13 @@
 
 namespace Klaviyo\API;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\MultipartStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp74\Client;
+use GuzzleHttp74\ClientInterface;
+use GuzzleHttp74\Exception\RequestException;
+use GuzzleHttp74\Exception\ConnectException;
+use GuzzleHttp74\Psr7\MultipartStream;
+use GuzzleHttp74\Psr7\Request;
+use GuzzleHttp74\RequestOptions;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 use Klaviyo\HeaderSelector;
@@ -244,7 +244,7 @@ class TrackIdentifyApi
      * @param  string $data String representation of base64 encoded JSON object (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function identifyGetAsync($data)
     {
@@ -264,7 +264,7 @@ class TrackIdentifyApi
      * @param  string $data String representation of base64 encoded JSON object (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function identifyGetAsyncWithHttpInfo($data)
     {
@@ -310,7 +310,7 @@ class TrackIdentifyApi
      * @param  string $data String representation of base64 encoded JSON object (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function identifyGetRequest($data)
     {
@@ -371,11 +371,11 @@ class TrackIdentifyApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -391,7 +391,7 @@ class TrackIdentifyApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -529,7 +529,7 @@ class TrackIdentifyApi
      * @param  string $data (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function identifyPostAsync($data)
     {
@@ -549,7 +549,7 @@ class TrackIdentifyApi
      * @param  string $data (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function identifyPostAsyncWithHttpInfo($data)
     {
@@ -595,7 +595,7 @@ class TrackIdentifyApi
      * @param  string $data (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function identifyPostRequest($data)
     {
@@ -649,11 +649,11 @@ class TrackIdentifyApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -669,7 +669,7 @@ class TrackIdentifyApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -807,7 +807,7 @@ class TrackIdentifyApi
      * @param  string $data String representation of base64 encoded JSON object (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function trackGetAsync($data)
     {
@@ -827,7 +827,7 @@ class TrackIdentifyApi
      * @param  string $data String representation of base64 encoded JSON object (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function trackGetAsyncWithHttpInfo($data)
     {
@@ -873,7 +873,7 @@ class TrackIdentifyApi
      * @param  string $data String representation of base64 encoded JSON object (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function trackGetRequest($data)
     {
@@ -934,11 +934,11 @@ class TrackIdentifyApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -954,7 +954,7 @@ class TrackIdentifyApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1092,7 +1092,7 @@ class TrackIdentifyApi
      * @param  string $data (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function trackPostAsync($data)
     {
@@ -1112,7 +1112,7 @@ class TrackIdentifyApi
      * @param  string $data (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function trackPostAsyncWithHttpInfo($data)
     {
@@ -1158,7 +1158,7 @@ class TrackIdentifyApi
      * @param  string $data (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function trackPostRequest($data)
     {
@@ -1212,11 +1212,11 @@ class TrackIdentifyApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1232,7 +1232,7 @@ class TrackIdentifyApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

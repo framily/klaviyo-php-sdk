@@ -1,7 +1,7 @@
 <?php
 namespace Klaviyo;
 
-use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp74\Client as GuzzleClient;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 
@@ -39,7 +39,7 @@ class Client {
         $this->config->setApiKey('api_key', $this->api_key);
 
         foreach ($this->subclient_names as $subclient_name) {
-            eval("\$api_instance = new Klaviyo\API\\${subclient_name}Api(new GuzzleHttp\Client(),\$this->config);");
+            eval("\$api_instance = new Klaviyo\API\\${subclient_name}Api(new GuzzleHttp74\Client(),\$this->config);");
             
             $this->$subclient_name = new Subclient(
                 $api_instance,

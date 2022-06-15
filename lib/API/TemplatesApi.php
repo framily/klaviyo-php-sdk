@@ -27,13 +27,13 @@
 
 namespace Klaviyo\API;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\MultipartStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp74\Client;
+use GuzzleHttp74\ClientInterface;
+use GuzzleHttp74\Exception\RequestException;
+use GuzzleHttp74\Exception\ConnectException;
+use GuzzleHttp74\Psr7\MultipartStream;
+use GuzzleHttp74\Psr7\Request;
+use GuzzleHttp74\RequestOptions;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 use Klaviyo\HeaderSelector;
@@ -247,7 +247,7 @@ class TemplatesApi
      * @param  string $name The new name of the email template. (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function cloneTemplateAsync($template_id, $name)
     {
@@ -268,7 +268,7 @@ class TemplatesApi
      * @param  string $name The new name of the email template. (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function cloneTemplateAsyncWithHttpInfo($template_id, $name)
     {
@@ -315,7 +315,7 @@ class TemplatesApi
      * @param  string $name The new name of the email template. (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function cloneTemplateRequest($template_id, $name)
     {
@@ -383,11 +383,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -408,7 +408,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -549,7 +549,7 @@ class TemplatesApi
      * @param  string $html (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function createTemplateAsync($name, $html)
     {
@@ -570,7 +570,7 @@ class TemplatesApi
      * @param  string $html (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function createTemplateAsyncWithHttpInfo($name, $html)
     {
@@ -617,7 +617,7 @@ class TemplatesApi
      * @param  string $html (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function createTemplateRequest($name, $html)
     {
@@ -681,11 +681,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -706,7 +706,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -844,7 +844,7 @@ class TemplatesApi
      * @param  string $template_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function deleteTemplateAsync($template_id)
     {
@@ -864,7 +864,7 @@ class TemplatesApi
      * @param  string $template_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function deleteTemplateAsyncWithHttpInfo($template_id)
     {
@@ -910,7 +910,7 @@ class TemplatesApi
      * @param  string $template_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function deleteTemplateRequest($template_id)
     {
@@ -968,11 +968,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -993,7 +993,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1134,7 +1134,7 @@ class TemplatesApi
      * @param  int $count For pagination, the number of results to return. Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getTemplatesAsync($page = 0, $count = 50)
     {
@@ -1155,7 +1155,7 @@ class TemplatesApi
      * @param  int $count For pagination, the number of results to return. Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getTemplatesAsyncWithHttpInfo($page = 0, $count = 50)
     {
@@ -1202,7 +1202,7 @@ class TemplatesApi
      * @param  int $count For pagination, the number of results to return. Max &#x3D; 100 (optional, default to 50)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getTemplatesRequest($page = 0, $count = 50)
     {
@@ -1279,11 +1279,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1304,7 +1304,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1445,7 +1445,7 @@ class TemplatesApi
      * @param  string $context This is the context your email template will be rendered with. Email templates are rendered with contexts in a similar manner to how Django templates are rendered. This means that nested template variables can be referenced via dot notation and template variables without corresponding context values are treated as falsy and output nothing. (optional, default to '{ "name" : "George Washington", "state" : "VA" }')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function renderTemplateAsync($template_id, $context = '{ "name" : "George Washington", "state" : "VA" }')
     {
@@ -1466,7 +1466,7 @@ class TemplatesApi
      * @param  string $context This is the context your email template will be rendered with. Email templates are rendered with contexts in a similar manner to how Django templates are rendered. This means that nested template variables can be referenced via dot notation and template variables without corresponding context values are treated as falsy and output nothing. (optional, default to '{ "name" : "George Washington", "state" : "VA" }')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function renderTemplateAsyncWithHttpInfo($template_id, $context = '{ "name" : "George Washington", "state" : "VA" }')
     {
@@ -1513,7 +1513,7 @@ class TemplatesApi
      * @param  string $context This is the context your email template will be rendered with. Email templates are rendered with contexts in a similar manner to how Django templates are rendered. This means that nested template variables can be referenced via dot notation and template variables without corresponding context values are treated as falsy and output nothing. (optional, default to '{ "name" : "George Washington", "state" : "VA" }')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function renderTemplateRequest($template_id, $context = '{ "name" : "George Washington", "state" : "VA" }')
     {
@@ -1575,11 +1575,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1600,7 +1600,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1753,7 +1753,7 @@ class TemplatesApi
      * @param  string $context Optional, JSON object. This is the context your email template will be rendered with. Email templates are rendered with contexts in a similar manner to how Django templates are rendered. This means that nested template variables can be referenced via dot notation and template variables without corresponding context values are treated as falsy and output nothing. ex: &#x60;{ \\\&quot;name\\\&quot; : \\\&quot;George Washington\\\&quot;, \\\&quot;state\\\&quot; : \\\&quot;VA\\\&quot; }&#x60; (optional, default to '{ "name" : "George Washington", "state" : "VA" }')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function sendTemplateAsync($template_id, $from_email, $from_name, $subject, $to, $context = '{ "name" : "George Washington", "state" : "VA" }')
     {
@@ -1778,7 +1778,7 @@ class TemplatesApi
      * @param  string $context Optional, JSON object. This is the context your email template will be rendered with. Email templates are rendered with contexts in a similar manner to how Django templates are rendered. This means that nested template variables can be referenced via dot notation and template variables without corresponding context values are treated as falsy and output nothing. ex: &#x60;{ \\\&quot;name\\\&quot; : \\\&quot;George Washington\\\&quot;, \\\&quot;state\\\&quot; : \\\&quot;VA\\\&quot; }&#x60; (optional, default to '{ "name" : "George Washington", "state" : "VA" }')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function sendTemplateAsyncWithHttpInfo($template_id, $from_email, $from_name, $subject, $to, $context = '{ "name" : "George Washington", "state" : "VA" }')
     {
@@ -1829,7 +1829,7 @@ class TemplatesApi
      * @param  string $context Optional, JSON object. This is the context your email template will be rendered with. Email templates are rendered with contexts in a similar manner to how Django templates are rendered. This means that nested template variables can be referenced via dot notation and template variables without corresponding context values are treated as falsy and output nothing. ex: &#x60;{ \\\&quot;name\\\&quot; : \\\&quot;George Washington\\\&quot;, \\\&quot;state\\\&quot; : \\\&quot;VA\\\&quot; }&#x60; (optional, default to '{ "name" : "George Washington", "state" : "VA" }')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function sendTemplateRequest($template_id, $from_email, $from_name, $subject, $to, $context = '{ "name" : "George Washington", "state" : "VA" }')
     {
@@ -1931,11 +1931,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1956,7 +1956,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2100,7 +2100,7 @@ class TemplatesApi
      * @param  string $html The new HTML content for this template. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateTemplateAsync($template_id, $name = null, $html = null)
     {
@@ -2122,7 +2122,7 @@ class TemplatesApi
      * @param  string $html The new HTML content for this template. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateTemplateAsyncWithHttpInfo($template_id, $name = null, $html = null)
     {
@@ -2170,7 +2170,7 @@ class TemplatesApi
      * @param  string $html The new HTML content for this template. (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function updateTemplateRequest($template_id, $name = null, $html = null)
     {
@@ -2236,11 +2236,11 @@ class TemplatesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -2261,7 +2261,7 @@ class TemplatesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

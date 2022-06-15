@@ -27,13 +27,13 @@
 
 namespace Klaviyo\API;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\MultipartStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp74\Client;
+use GuzzleHttp74\ClientInterface;
+use GuzzleHttp74\Exception\RequestException;
+use GuzzleHttp74\Exception\ConnectException;
+use GuzzleHttp74\Psr7\MultipartStream;
+use GuzzleHttp74\Psr7\Request;
+use GuzzleHttp74\RequestOptions;
 use Klaviyo\ApiException;
 use Klaviyo\Configuration;
 use Klaviyo\HeaderSelector;
@@ -244,7 +244,7 @@ class ProfilesApi
      * @param  \Klaviyo\Model\InlineObject $inline_object (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function exchangeAsync($inline_object = null)
     {
@@ -264,7 +264,7 @@ class ProfilesApi
      * @param  \Klaviyo\Model\InlineObject $inline_object (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function exchangeAsyncWithHttpInfo($inline_object = null)
     {
@@ -310,7 +310,7 @@ class ProfilesApi
      * @param  \Klaviyo\Model\InlineObject $inline_object (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function exchangeRequest($inline_object = null)
     {
@@ -340,7 +340,7 @@ class ProfilesApi
         // for model (json/xml)
         if (isset($inline_object)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object));
+                $httpBody = \GuzzleHttp74\json_encode(ObjectSerializer::sanitizeForSerialization($inline_object));
             } else {
                 $httpBody = $inline_object;
             }
@@ -360,11 +360,11 @@ class ProfilesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -385,7 +385,7 @@ class ProfilesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -523,7 +523,7 @@ class ProfilesApi
      * @param  string $person_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getProfileAsync($person_id)
     {
@@ -543,7 +543,7 @@ class ProfilesApi
      * @param  string $person_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function getProfileAsyncWithHttpInfo($person_id)
     {
@@ -589,7 +589,7 @@ class ProfilesApi
      * @param  string $person_id (required)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function getProfileRequest($person_id)
     {
@@ -647,11 +647,11 @@ class ProfilesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -672,7 +672,7 @@ class ProfilesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -822,7 +822,7 @@ class ProfilesApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function profileMetricTimelineAsync($person_id, $metric_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -846,7 +846,7 @@ class ProfilesApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function profileMetricTimelineAsyncWithHttpInfo($person_id, $metric_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -896,7 +896,7 @@ class ProfilesApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function profileMetricTimelineRequest($person_id, $metric_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -1008,11 +1008,11 @@ class ProfilesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1033,7 +1033,7 @@ class ProfilesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1180,7 +1180,7 @@ class ProfilesApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function profileMetricsTimelineAsync($person_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -1203,7 +1203,7 @@ class ProfilesApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function profileMetricsTimelineAsyncWithHttpInfo($person_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -1252,7 +1252,7 @@ class ProfilesApi
      * @param  string $sort Sort order to apply to timeline, either descending or ascending. Valid values are &#x60;desc&#x60; or &#x60;asc&#x60;. Defaults to &#x60;desc&#x60;. Always descending when &#x60;since&#x60; is not sent, as &#x60;since&#x60; defaults to current time. (optional, default to 'desc')
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function profileMetricsTimelineRequest($person_id, $since = null, $count = 50, $sort = 'desc')
     {
@@ -1350,11 +1350,11 @@ class ProfilesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1375,7 +1375,7 @@ class ProfilesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1516,7 +1516,7 @@ class ProfilesApi
      * @param  array<string,object> $params (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateProfileAsync($person_id, $params = null)
     {
@@ -1537,7 +1537,7 @@ class ProfilesApi
      * @param  array<string,object> $params (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp74\Promise\PromiseInterface
      */
     public function updateProfileAsyncWithHttpInfo($person_id, $params = null)
     {
@@ -1584,7 +1584,7 @@ class ProfilesApi
      * @param  array<string,object> $params (optional)
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     * @return \GuzzleHttp74\Psr7\Request
      */
     public function updateProfileRequest($person_id, $params = null)
     {
@@ -1653,11 +1653,11 @@ class ProfilesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp74\json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = \GuzzleHttp74\Psr7\Query::build($formParams);
             }
         }
 
@@ -1678,7 +1678,7 @@ class ProfilesApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = \GuzzleHttp74\Psr7\Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
